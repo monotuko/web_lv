@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>Welcome</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}" >
+      <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+
+  </head>
+
+
+  <body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <div class="bgImageContainer"></div>
+
+   <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;" >
+
+      <h1 class="navbar-brand" href="#" style="font-size: 30px; color: red; font-weight: bold">Luận văn</h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalLong" style="font-weight: bold; font-size: large">Giới thiệu </a>
+          </li>
+
+          <div class="modal fade cus_blur" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" style="max-width: 1250px" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLongTitle">Giới thiệu luận văn</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="white-space: pre-line; word-wrap: break-word;">
+                  grrrrrrrrrrrrrrrrrrrrrrrrrrrawdadsdasdasdasdasdasdasdasrrrrrrrrdddddddddddddddddddddddddddddddddddddddddrrrrrrrrhxvcbxcbxcvbvcxnxnfnggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhh
+                  sdkgjfdskgkdsfgkjksbg
+                  sdfkgbsdjkfghihebrklgjbkjdbkljbfd
+                  sdgkbjsjkdfgbjhsfbdg
+                  ergrehgs
+                  hjjh
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+            <li class="nav-item">
+            <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal" style="font-weight: bold; font-size: large">Kiểm tra lỗi</a>
+          </li>
+
+            <div class="modal fade cus_blur" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog"  role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLabel">Kiểm tra lỗi vòng bi</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <h5>Chọn file gia tốc để dự đoán lỗi</h5>
+                        Select file: <input class="form-control form-control-sm" id="text_file" name="text_file" type="file" />
+                        <h2></h2>
+{#                        onclick="window.location.href='{{ url_for('static',filename='js/form.js') }}';"#}
+{#                        <button type="predict" href="{{ url_for('static',filename='js/form.js') }}" class="btn btn-primary mr-auto" >Predict</button>#}
+                    <button type="submit" class="btn btn-primary mr-auto">Predict</button>
+                    </form>
+
+{#                  <input class="form-control form-control-sm" id="formFileSm" type="file" />#}
+
+                    <hr/>
+                    <h5 style="display: inline-block">Result: </h5>
+{#                    <div id="successAlert" style="display:inline-block"></div>#}
+                    <div id="successAlert" class="alert alert-success" role="alert" style="display:inline-block"></div>
+                    <div id="errorAlert" class="alert alert-danger" role="alert" style="display:inline-block"></div>
+                    <div id="successData"></div>
+
+
+
+{#                    {% if show_predictions_modal %}#}
+{#                        <h5>Predict: </h5>#}
+{#                        <h6>{{result}}</h6>#}
+{#                    {%  endif %}#}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: bold; font-size: large">
+              Giám sát
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+
+        </ul>
+          <h3 class="navbar-brand pull-right" href="#" style="color: blue; font-weight: bold">
+            <img src="/static/images/new_logo.jpg" width="50" height="50">
+            ĐH BÁCH KHOA
+          </h3>
+      </div>
+    </nav>
+  </body>
+</html>
+
