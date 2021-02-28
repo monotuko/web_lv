@@ -9,7 +9,7 @@ STATIC_DIR = os.path.abspath('static')
 app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home():
    return render_template('home.html')
 
@@ -75,4 +75,4 @@ def process():
       return jsonify({'error': "File has not been uploaded"})
 
 if __name__ == '__main__':
-   app.run(host='127.0.0.1', port=1000, debug=True)
+   app.run(debug=True)
